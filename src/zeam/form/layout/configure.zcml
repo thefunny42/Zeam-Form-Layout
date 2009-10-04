@@ -4,4 +4,7 @@
   <include package="zeam.form.base" />
   <include package="megrok.layout" file="meta.zcml" />
 
+  <!-- Grok package (to register template) -->
+  <grok:grok package="." />
+
 </configure>

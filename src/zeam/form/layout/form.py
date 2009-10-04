@@ -1,6 +1,7 @@
 
 
 from megrok.layout.interfaces import ILayout, IPage
+from megrok import pagetemplate as pt
 
 from zeam.form.base.form import Form as BaseForm
 
@@ -47,3 +48,7 @@ class Form(LayoutAwareForm, BaseForm):
     """
     grok.baseclass()
     grok.implements(IPage)
+
+
+class FormTemplate(pt.PageTemplate):
+    pt.view(Form)

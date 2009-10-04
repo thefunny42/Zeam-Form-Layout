@@ -1,0 +1,35 @@
+zeam.form.layout
+================
+
+This package let you embed a zeam.form Form inside a megrok.layout
+Layout.
+
+We can define a form:
+
+   >>> from zeam.form.layout import Form
+   >>> from zeam.form.base import Action, Field
+
+   >>> class MyForm(Form):
+   ...    pass
+
+   >>> MyForm.fields += Field("Job")
+   >>> MyForm.fields += Field("Salary")
+   >>> MyForm.actions += Action("Fire")
+
+   >>> from zope.publisher.browser import TestRequest
+   >>> request = TestRequest()
+
+   >>> form = MyForm(object(), request)
+
+Our form implements IPage from megrok.layout:
+
+   >>> from megrok.layout.interfaces import IPage
+   >>> from zeam.form.base.interfaces import IForm
+   >>> from zope.interface.verify import verifyObject
+
+   >>> verifyObject(IForm, form)
+   True
+
+#verifyObject(IPage, form)
+#True
+

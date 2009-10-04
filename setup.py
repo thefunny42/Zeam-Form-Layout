@@ -24,7 +24,18 @@ setup(name='zeam.form.layout',
       zip_safe=False,
       install_requires=[
         'setuptools',
+        'zope.component',
+        'zope.publisher',
+        'grokcore.component',
         'zeam.form.base',
+        'megrok.pagetemplate',
         'megrok.layout',
+        # Test
+        'zope.securitypolicy',
+        'zope.app.authentication',
+        'zope.app.testing',
+        'zope.app.zcmlfiles',
+        'zope.testing',
+        'zope.testbrowser',
         ],
       )
