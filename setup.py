@@ -5,11 +5,14 @@ version = '1.0'
 
 setup(name='zeam.form.layout',
       version=version,
-      description="Layout support for zeam.form",
+      description="megrok.layout support for zeam.form",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
+        "Framework :: Zope3",
         "Programming Language :: Python",
+        "Programming Language :: Zope",
+        "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='zeam form layout',
