@@ -30,6 +30,4 @@ Our form implements IPage from megrok.layout:
    >>> verifyObject(IForm, form)
    True
 
-#verifyObject(IPage, form)
-#True
 

@@ -32,8 +32,10 @@ We can render our form:
                                  enctype="multipart/form-data">
           <h1>A form about a guy</h1>
           <div class="actions">
-            <input type="submit" id="form-say-hello"
-                   name="form.say-hello" value="Say hello" />
+            <div class="action">
+               <input type="submit" id="form-action-say-hello"
+                      name="form.action.say-hello" value="Say hello" />
+            </div>
           </div>
         </form>
       </div>
@@ -48,8 +50,10 @@ from here:
           enctype="multipart/form-data">
       <h1>A form about a guy</h1>
       <div class="actions">
-          <input type="submit" id="form-say-hello"
-                 name="form.say-hello" value="Say hello" />
+          <div class="action">
+              <input type="submit" id="form-action-say-hello"
+                     name="form.action.say-hello" value="Say hello" />
+          </div>
       </div>
   </form>
 
@@ -69,7 +73,7 @@ let's try out that form with a browser:
 
   >>> action = browser.getControl('Say hello')
   >>> action
-  <SubmitControl name='form.say-hello' type='submit'>
+  <SubmitControl name='form.action.say-hello' type='submit'>
 
   >>> action.click()
   >>> print browser.contents
@@ -80,11 +84,13 @@ let's try out that form with a browser:
       <h1> This is a cool layout for a guy </h1>
       <div class="content"><form action="http://localhost/guy/helloform" method="post"
                                  enctype="multipart/form-data">
-          <p class="status-message">Hello</p>
           <h1>A form about a guy</h1>
+          <p class="form-status">Hello</p>
           <div class="actions">
-            <input type="submit" id="form-say-hello"
-                   name="form.say-hello" value="Say hello" />
+             <div class="action">
+                <input type="submit" id="form-action-say-hello"
+                       name="form.action.say-hello" value="Say hello" />
+             </div>
           </div>
         </form>
       </div>
