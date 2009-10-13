@@ -31,6 +31,7 @@ setup(name='zeam.form.layout',
         'zope.publisher',
         'grokcore.component',
         'zeam.form.base',
+        'zeam.form.composed',
         'megrok.pagetemplate',
         'megrok.layout',
         # Test

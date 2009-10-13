@@ -5,11 +5,10 @@ zeam.form.layout
 ``zeam.form.layout`` let you embbed a ``zeam.form`` Form inside a
 layout created with `megrok.layout`_.
 
-You just have to import ``Form`` from ``zeam.form.layout`` instead of
-``zeam.form.base`` to get that feature.
+You just have to import ``Form`` (or ``ComposedForm``) from
+``zeam.form.layout`` instead of their original package.
 
-A default template is defined with only the form code inside it, so
-you can use directly if you whish.
+Default templates are defined ready to be used inside a layout.
 
 .. _megrok.layout: http://pypi.python.org/pypi/megrok.layout
 

@@ -4,6 +4,7 @@ from megrok.layout.interfaces import ILayout, IPage
 from megrok import pagetemplate as pt
 
 from zeam.form.base.form import Form as BaseForm
+from zeam.form.composed.form import ComposedForm as BaseComposedForm
 
 from zope.publisher.publish import mapply
 from zope import component
@@ -44,11 +45,32 @@ class LayoutAwareForm(object):
 
 
 class Form(LayoutAwareForm, BaseForm):
-    """A zeam.form Form which is able to use a layout to render itself.
+    """A zeam.form Form which is able to use a layout to render
+    itself.
     """
     grok.baseclass()
     grok.implements(IPage)
 
 
+
 class FormTemplate(pt.PageTemplate):
+    """Template for a layout aware form.
+    """
+    # Basically it's the same than the formcanvas form, but I do not
+    # know how to reuse it.
     pt.view(Form)
+
+
+class ComposedForm(LayoutAwareForm, BaseComposedForm):
+    """A composed zeam.form form which is able to use a layout to
+    render itself.
+    """
+    grok.baseclass()
+    grok.implements(IPage)
+
+
+class ComposedFormTemplate(pt.PageTemplate):
+    """Template for a layout aware composed form.
+    """
+    pt.view(ComposedForm)
+

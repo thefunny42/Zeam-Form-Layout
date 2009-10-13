@@ -1,2 +1,2 @@
 
-from zeam.form.layout.form import Form
+from zeam.form.layout.form import Form, ComposedForm
