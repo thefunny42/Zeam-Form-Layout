@@ -4,21 +4,21 @@ We will define here a layout and render a form inside it.
 First we need to grok our package:
 
   >>> from zeam.form.layout.testing import grok
-  >>> grok('zeam.form.layout.ftests.layout.layout')
+  >>> grok('zeam.form.layout.ftests.layout.form')
 
 Now we can lookup our form:
 
   >>> from zope.publisher.browser import TestRequest
   >>> request = TestRequest()
 
-  >>> from zeam.form.layout.ftests.layout.layout import Guy
+  >>> from zeam.form.layout.ftests.layout.form import Guy
   >>> context = Guy()
 
   >>> from zope import component
   >>> form = component.getMultiAdapter(
   ...     (context, request), name='helloform')
   >>> form
-  <zeam.form.layout.ftests.layout.layout.HelloForm object at ...>
+  <zeam.form.layout.ftests.layout.form.HelloForm object at ...>
 
 We can render our form:
 
@@ -58,7 +58,7 @@ from here:
   </form>
 
   >>> form.layout
-  <zeam.form.layout.ftests.layout.layout.GuyLayout object at ...>
+  <zeam.form.layout.ftests.layout.form.GuyLayout object at ...>
 
 This content is rendered by a special template of this package. Now
 let's try out that form with a browser:
@@ -101,8 +101,7 @@ let's try out that form with a browser:
 """
 
 from megrok.layout import Layout
-from zeam.form.layout import Form
-from zeam.form.base import action
+from zeam.form import layout as zeamform
 
 from grokcore import component as grok
 
@@ -112,14 +111,14 @@ class Guy(grok.Context):
 
 
 class GuyLayout(Layout):
-    pass
+    grok.context(Guy)
 
 
-class HelloForm(Form):
+class HelloForm(zeamform.Form):
 
     label = u"A form about a guy"
 
-    @action("Say hello")
+    @zeamform.action("Say hello")
     def sayHello(self):
         self.status = u"Hello"
 

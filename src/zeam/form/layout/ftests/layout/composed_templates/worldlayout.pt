@@ -1,0 +1,11 @@
+<html>
+   <head>
+   </head>
+   <body>
+     <h1> Directly from our planet </h1>
+     <div class="content"
+          tal:content="structure view/content">
+       Content
+     </div>
+   </body>
+</html>
