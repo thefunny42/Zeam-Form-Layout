@@ -33,7 +33,7 @@ We can render our form:
         <div class="subforms">
           <div class="subform"><form action="http://127.0.0.1" method="post"
                enctype="multipart/form-data">
-              <h1>Add some people to the world</h1>
+              <h2>Add some people to the world</h2>
               <div class="actions">
                 <div class="action">
                   <input type="submit" id="form-birthgiver-action-new"
@@ -44,7 +44,7 @@ We can render our form:
           </div>
           <div class="subform"><form action="http://127.0.0.1" method="post"
                enctype="multipart/form-data">
-               <h1>Collect some dead people</h1>
+               <h2>Collect some dead people</h2>
                <div class="actions">
                 <div class="action">
                   <input type="submit" id="form-deathcollector-action-collect"
