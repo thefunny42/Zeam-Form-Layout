@@ -9,10 +9,10 @@
   <table tal:condition="view/lineWidgets">
     <thead>
       <tr>
-        <td tal:repeat="field view/fields"
+        <th tal:repeat="field view/fields"
             tal:content="field/title">
           Title
-        </td>
+        </th>
       </tr>
     </thead>
     <tbody>
