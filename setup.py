@@ -32,6 +32,7 @@ setup(name='zeam.form.layout',
         'grokcore.component',
         'zeam.form.base',
         'zeam.form.composed',
+        'zeam.form.table',
         'megrok.pagetemplate',
         'megrok.layout',
         # Test

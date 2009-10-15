@@ -4,3 +4,6 @@
 [submodule "devel/zeam.form.composed"]
 	path = devel/zeam.form.composed
 	url = git@github.com:thefunny42/Zeam-Form-Composed.git
+[submodule "devel/zeam.form.table"]
+	path = devel/zeam.form.table
+	url = git@github.com:thefunny42/Zeam-Form-Table.git
