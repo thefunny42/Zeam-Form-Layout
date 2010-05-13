@@ -1,7 +1,16 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0dev'
+
+tests_require = [
+    'zope.app.authentication',
+    'zope.app.testing',
+    'zope.app.zcmlfiles',
+    'zope.securitypolicy',
+    'zope.testbrowser',
+    'zope.testing',
+    ]
 
 setup(name='zeam.form.layout',
       version=version,
@@ -32,15 +41,9 @@ setup(name='zeam.form.layout',
         'grokcore.component',
         'zeam.form.base',
         'zeam.form.composed',
-        'zeam.form.table',
         'megrok.pagetemplate',
         'megrok.layout',
-        # Test
-        'zope.securitypolicy',
-        'zope.app.authentication',
-        'zope.app.testing',
-        'zope.app.zcmlfiles',
-        'zope.testing',
-        'zope.testbrowser',
         ],
+      tests_require = tests_require,
+      extras_require = {'test': tests_require},
       )

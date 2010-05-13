@@ -5,7 +5,6 @@ from megrok import pagetemplate as pt
 
 from zeam.form.base.form import Form as BaseForm
 from zeam.form.composed.form import ComposedForm as BaseComposedForm
-from zeam.form.table.form import TableForm as BaseTableForm
 
 from zope.publisher.publish import mapply
 from zope import component
@@ -73,13 +72,3 @@ class ComposedFormTemplate(pt.PageTemplate):
     pt.view(ComposedForm)
 
 
-class TableForm(LayoutAwareForm, BaseTableForm):
-    """A table form which is able to use a layout to render itself.
-    """
-    grok.baseclass()
-    grok.implements(IPage)
-
-
-class TableFormTemplate(pt.PageTemplate):
-    """Template for a layout aware table form.
-    """
