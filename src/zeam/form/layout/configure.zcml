@@ -3,7 +3,6 @@
 
   <include package="zeam.form.base" />
   <include package="zeam.form.composed" />
-  <include package="zeam.form.table" />
   <include package="megrok.layout" file="meta.zcml" />
 
   <!-- Grok package (to register template) -->
