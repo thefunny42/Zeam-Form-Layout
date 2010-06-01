@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0dev'
+version = '0.1'
 
 tests_require = [
     'zope.app.authentication',
@@ -10,6 +10,8 @@ tests_require = [
     'zope.securitypolicy',
     'zope.testbrowser',
     'zope.testing',
+    'zope.configuration',
+    'zope.interface',
     ]
 
 setup(name='zeam.form.layout',
