@@ -34,7 +34,7 @@ We can render our form:
           <div class="actions">
             <div class="action">
                <input type="submit" id="form-action-say-hello"
-                      name="form.action.say-hello" value="Say hello" />
+                      name="form.action.say-hello" value="Say hello" class="action" />
             </div>
           </div>
         </form>
@@ -52,7 +52,7 @@ from here:
       <div class="actions">
           <div class="action">
               <input type="submit" id="form-action-say-hello"
-                     name="form.action.say-hello" value="Say hello" />
+                     name="form.action.say-hello" value="Say hello" class="action" />
           </div>
       </div>
   </form>
@@ -89,7 +89,7 @@ let's try out that form with a browser:
           <div class="actions">
              <div class="action">
                 <input type="submit" id="form-action-say-hello"
-                       name="form.action.say-hello" value="Say hello" />
+                       name="form.action.say-hello" value="Say hello" class="action" />
              </div>
           </div>
         </form>
@@ -97,7 +97,42 @@ let's try out that form with a browser:
     </body>
   </html>
 
+Now we render the form with an form error:
 
+  >>> from zeam.form.base.errors import Error
+  >>> form = component.getMultiAdapter(
+  ...     (context, request), name='helloform')
+
+  >>> form.formErrors
+
+  >>> form.errors.append(Error('I am a Error', identifier=form.prefix))
+  >>> len(form.formErrors)
+  1 
+
+  >>> print form()
+  <html>
+    <head>
+    </head>
+    <body>
+      <h1> This is a cool layout for a guy </h1>
+      <div class="content"><form action="http://127.0.0.1" method="post"
+                                 enctype="multipart/form-data">
+      <h1>A form about a guy</h1>
+      <div class="form-error">
+        <span> There were errors:</span>
+        <ul>
+          <li> I am a Error </li>
+        </ul>
+      </div>
+      <div class="actions">
+        <div class="action">
+          <input type="submit" id="form-action-say-hello" name="form.action.say-hello" value="Say hello" class="action" />
+        </div>
+      </div>
+     </form>
+    </div>
+   </body>
+  </html>
 """
 
 from megrok.layout import Layout
