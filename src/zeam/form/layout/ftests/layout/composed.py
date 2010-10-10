@@ -29,35 +29,28 @@ We can render our form:
      <body>
        <h1> Directly from our planet </h1>
        <div class="content">
-       <h1>A form to manage a guy</h1>
-       <div class="subforms">
-         <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
-           <h2>Add some people to the world</h2>
-           <div class="actions">
-             <div class="action">
-               <input type="submit" 
-                      id="form-birthgiver-action-new" 
-                      name="form.birthgiver.action.new" 
-                      value="New" 
-                      class="action" />
-             </div>
-           </div>
-         </form></div>
-         <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
-           <h2>Collect some dead people</h2>
-           <div class="actions">
-             <div class="action">
-               <input type="submit" 
-                      id="form-deathcollector-action-collect" 
-                      name="form.deathcollector.action.collect" 
-                      value="Collect" 
-                      class="action" />
-           </div>
-         </div>
-         </form></div>
-       </div>
-     </div>
-   </body>
+    <h1>A form to manage a guy</h1>
+    <div class="subforms">
+      <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
+    <h2>Add some people to the world</h2>
+    <div class="actions">
+      <div class="action">
+        <input type="submit" id="form-birthgiver-action-new" name="form.birthgiver.action.new" value="New" class="action" />
+      </div>
+    </div>
+  </form></div>
+      <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
+  <BLANKLINE>
+    <h2>Collect some dead people</h2>
+    <div class="actions">
+      <div class="action">
+        <input type="submit" id="form-deathcollector-action-collect" name="form.deathcollector.action.collect" value="Collect" class="action" />
+      </div>
+    </div>
+  </form></div>
+    </div>
+  </div>
+     </body>
   </html>
 
 
@@ -114,47 +107,40 @@ Let's render the composed form with an form error:
 
   >>> print form()
   <html>
-    <head>
-    </head>
-    <body>
-      <h1> Directly from our planet </h1>
-      <div class="content">
-      <h1>A form to manage a guy</h1>
-      <div class="form-error">
-        <span> There were errors:</span>
-        <ul>
-          <li> I am a Error </li>
-        </ul>
-      </div>
-      <div class="subforms">
-        <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
-          <h2>Add some people to the world</h2>
-            <div class="actions">
-              <div class="action">
-                <input type="submit" 
-                       id="form-birthgiver-action-new" 
-                       name="form.birthgiver.action.new" 
-                       value="New" 
-                       class="action" />
-              </div>
-            </div>
-        </form></div>
-        <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
-          <h2>Collect some dead people</h2>
-            <div class="actions">
-              <div class="action">
-                <input type="submit" 
-                       id="form-deathcollector-action-collect" 
-                       name="form.deathcollector.action.collect" 
-                       value="Collect" 
-                       class="action" />
-              </div>
-            </div>
-        </form></div>
+     <head>
+     </head>
+     <body>
+       <h1> Directly from our planet </h1>
+       <div class="content">
+    <h1>A form to manage a guy</h1>
+    <dl class="form-errors">
+      <dt>There were errors.</dt>
+      <dd class="form-error">
+        <span>I am a Error</span>
+      </dd>
+    </dl>
+    <div class="subforms">
+      <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
+    <h2>Add some people to the world</h2>
+    <div class="actions">
+      <div class="action">
+        <input type="submit" id="form-birthgiver-action-new" name="form.birthgiver.action.new" value="New" class="action" />
       </div>
     </div>
-  </body>
+  </form></div>
+      <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
+    <h2>Collect some dead people</h2>
+    <div class="actions">
+      <div class="action">
+        <input type="submit" id="form-deathcollector-action-collect" name="form.deathcollector.action.collect" value="Collect" class="action" />
+      </div>
+    </div>
+  </form></div>
+    </div>
+  </div>
+     </body>
   </html>
+
 
 """
 

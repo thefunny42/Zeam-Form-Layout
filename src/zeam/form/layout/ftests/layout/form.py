@@ -111,28 +111,29 @@ Now we render the form with an form error:
 
   >>> print form()
   <html>
-    <head>
-    </head>
-    <body>
-      <h1> This is a cool layout for a guy </h1>
-      <div class="content"><form action="http://127.0.0.1" method="post"
-                                 enctype="multipart/form-data">
-      <h1>A form about a guy</h1>
-      <div class="form-error">
-        <span> There were errors:</span>
-        <ul>
-          <li> I am a Error </li>
-        </ul>
+     <head>
+     </head>
+     <body>
+       <h1> This is a cool layout for a guy </h1>
+       <div class="content"><form action="http://127.0.0.1" method="post"
+        enctype="multipart/form-data">
+    <h1>A form about a guy</h1>
+    <dl class="form-errors">
+      <dt>There were errors.</dt>
+      <dd class="form-error">
+        <span>I am a Error</span>
+      </dd>
+    </dl>
+    <div class="actions">
+      <div class="action">
+        <input type="submit" id="form-action-say-hello" name="form.action.say-hello" value="Say hello" class="action" />
       </div>
-      <div class="actions">
-        <div class="action">
-          <input type="submit" id="form-action-say-hello" name="form.action.say-hello" value="Say hello" class="action" />
-        </div>
-      </div>
-     </form>
     </div>
-   </body>
+  </form>
+  </div>
+     </body>
   </html>
+
 """
 
 from megrok.layout import Layout
