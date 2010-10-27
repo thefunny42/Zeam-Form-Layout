@@ -1,10 +1,12 @@
 Changelog
 =========
 
-0.2 - Unreleased
+0.2 (2010-10-27)
 ----------------
 
-* ...
+* Corrected templates to use the latest version of ``zeam.form.base``.
+
+* Added tests related to templates rendering.
 
 
 0.1 (2010-06-01)
