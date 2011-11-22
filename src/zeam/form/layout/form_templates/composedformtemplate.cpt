@@ -1,0 +1,32 @@
+<tal:form i18n:domain="zeam.form.base">
+
+  <h1 tal:condition="view.label"
+      tal:content="view.label">Label</h1>
+
+  <p tal:condition="view.description"
+     tal:content="view.description">Description</p>
+
+  <div class="form-error"
+       tal:condition="view.errors">
+    <ul tal:condition="view.formErrors"
+        tal:repeat="error view.formErrors">
+      <li> <span tal:replace="error.title" /> </li>
+    </ul>
+  </div>
+
+  <div class="subforms">
+    <div class="subform"
+         tal:repeat="subform view.subforms"
+         tal:content="structure subform.render()">
+      Subform
+    </div>
+  </div>
+
+  <div class="actions"
+       tal:condition="view.actionWidgets">
+    <div class="action" tal:repeat="widget view.actionWidgets">
+      <tal:widget tal:content="structure widget.render()" />
+    </div>
+  </div>
+
+</tal:form>

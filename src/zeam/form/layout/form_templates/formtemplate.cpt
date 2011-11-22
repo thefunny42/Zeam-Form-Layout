@@ -1,0 +1,61 @@
+<form action="." tal:attributes="action request.URL" method="post"
+      enctype="multipart/form-data">
+
+  <h1 tal:condition="view.label"
+      tal:content="view.label">Label</h1>
+
+  <p tal:condition="view.description"
+     tal:content="view.description">Description</p>
+
+  <p class="form-status"
+     tal:condition="view.status"
+     tal:content="view.status">Status</p>
+
+  <div class="form-error"
+       tal:condition="view.errors">
+    <ul tal:condition="view.formErrors"
+        tal:repeat="error view.formErrors">
+      <li> <span tal:replace="error.title" /> </li>
+    </ul>
+  </div>
+
+  <div class="fields"
+       tal:condition="view.fieldWidgets">
+    <div class="field" tal:repeat="widget view.fieldWidgets">
+      <tal:presentation
+         tal:condition="widget.isVisible()">
+        <label class="field-label" for="#"
+               tal:attributes="for widget.htmlId()"
+               tal:content="widget.title">
+          Label
+        </label>
+        <span class="field-required"
+              i18n:translate=""
+              tal:condition="widget.required">(required)</span>
+        <br />
+        <tal:description tal:condition="widget.description">
+          <span class="field-description"
+                tal:content="widget.description">
+          </span><br />
+        </tal:description>
+        <tal:error tal:define="error widget.error"
+                   tal:condition="error">
+          <span class="field-error"
+                tal:content="error.title">
+            Error
+          </span>
+          <br />
+        </tal:error>
+      </tal:presentation>
+      <tal:widget tal:content="structure widget.render()" />
+    </div>
+  </div>
+
+  <div class="actions"
+       tal:condition="view.actionWidgets">
+    <div class="action" tal:repeat="widget view.actionWidgets">
+      <tal:widget tal:content="structure widget.render()" />
+    </div>
+  </div>
+
+</form>
