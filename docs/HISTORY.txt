@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.3 (2012/04/27)
+----------------
+
+* Use ``grokcore.chameleon`` instead of ``megrok.chameleon``.
+
+* Use ``grokcore.layout`` instead of ``megrok.layout``.
+
 0.2 (2010-10-27)
 ----------------
 
