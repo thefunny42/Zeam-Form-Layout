@@ -1,2 +1,2 @@
-recursive-include src/zeam/form/layout *.txt *.py *.zcml *.pt
+recursive-include src *.cpt *.pt *.py *.txt *.zcml
 recursive-include docs *.txt
