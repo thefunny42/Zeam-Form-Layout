@@ -38,7 +38,8 @@ We can render our form:
         <input type="submit" id="form-birthgiver-action-new" name="form.birthgiver.action.new" value="New" class="action" />
       </div>
     </div>
-  </form></div>
+  </form>
+  </div>
       <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
   <BLANKLINE>
     <h2>Collect some dead people</h2>
@@ -47,9 +48,10 @@ We can render our form:
         <input type="submit" id="form-deathcollector-action-collect" name="form.deathcollector.action.collect" value="Collect" class="action" />
       </div>
     </div>
-  </form></div>
-    </div>
-  </div>
+  </form>
+     </div>
+     </div>
+     </div>
      </body>
   </html>
 
@@ -68,7 +70,7 @@ let's try out that form with a browser:
   >>> root = getRootFolder()
   >>> root['earth'] = context
 
-  >>> from zope.testbrowser.testing import Browser
+  >>> from zope.app.wsgi.testlayer import Browser
   >>> browser = Browser()
   >>> browser.handleErrors = False
   >>> browser.open('http://localhost/earth/lifemanagement')
@@ -100,8 +102,8 @@ Let's render the composed form with an form error:
   ...     (context, request), name='lifemanagement')
 
   >>> form.formErrors
-
-  >>> form.errors.append(Error('I am a Error', identifier=form.prefix))
+  []
+  >>> form.errors.append(Error('I am an Error', identifier=form.prefix))
   >>> len(form.formErrors)
   1
 
@@ -113,12 +115,11 @@ Let's render the composed form with an form error:
        <h1> Directly from our planet </h1>
        <div class="content">
     <h1>A form to manage a guy</h1>
-    <dl class="form-errors">
-      <dt>There were errors.</dt>
-      <dd class="form-error">
-        <span>I am a Error</span>
-      </dd>
-    </dl>
+    <div class="form-error">
+      <ul>
+        <li> I am an Error </li>
+      </ul>
+    </div>
     <div class="subforms">
       <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
     <h2>Add some people to the world</h2>
@@ -127,7 +128,8 @@ Let's render the composed form with an form error:
         <input type="submit" id="form-birthgiver-action-new" name="form.birthgiver.action.new" value="New" class="action" />
       </div>
     </div>
-  </form></div>
+  </form>
+  </div>
       <div class="subform"><form action="http://127.0.0.1" method="post" enctype="multipart/form-data">
     <h2>Collect some dead people</h2>
     <div class="actions">
@@ -135,19 +137,19 @@ Let's render the composed form with an form error:
         <input type="submit" id="form-deathcollector-action-collect" name="form.deathcollector.action.collect" value="Collect" class="action" />
       </div>
     </div>
-  </form></div>
+  </form>
     </div>
-  </div>
+    </div>
+    </div>
      </body>
   </html>
 
 
 """
 
-from megrok.layout import Layout
-from zeam.form import layout as zeamform
-
 from grokcore import component as grok
+from grokcore.layout import Layout
+from zeam.form import layout as zeamform
 
 
 class World(grok.Context):

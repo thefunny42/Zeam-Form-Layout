@@ -1,15 +1,14 @@
 
 
+from grokcore import component as grok
 from grokcore.layout.interfaces import ILayout, IPage
 from megrok import pagetemplate as pt
+from zope import component
+from zope.publisher.publish import mapply
 
 from zeam.form.base.form import Form as BaseForm
 from zeam.form.composed.form import ComposedForm as BaseComposedForm
 
-from zope.publisher.publish import mapply
-from zope import component
-
-from grokcore import component as grok
 
 
 class LayoutAwareForm(object):

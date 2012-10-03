@@ -1,7 +1,7 @@
 zeam.form.layout
 ================
 
-This package let you embed a zeam.form Form inside a megrok.layout
+This package let you embed a zeam.form Form inside a grokcore.layout
 Layout.
 
 We can define a form:
@@ -21,9 +21,9 @@ We can define a form:
 
    >>> form = MyForm(object(), request)
 
-Our form implements IPage from megrok.layout:
+Our form implements IPage from grokcore.layout:
 
-   >>> from megrok.layout.interfaces import IPage
+   >>> from grokcore.layout.interfaces import IPage
    >>> from zeam.form.base.interfaces import IForm
    >>> from zope.interface.verify import verifyObject
 

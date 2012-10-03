@@ -1,22 +1,19 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4dev'
+version = '0.3.1dev'
 
 tests_require = [
-    'zope.app.authentication',
-    'zope.app.testing',
-    'zope.app.zcmlfiles',
-    'zope.securitypolicy',
-    'zope.testbrowser',
-    'zope.testing',
-    'zope.configuration',
     'zope.interface',
+    'zope.app.wsgi',
+    'zope.configuration',
+    'zope.testing',
+    'zeam.form.base [test]',
     ]
 
 setup(name='zeam.form.layout',
       version=version,
-      description="megrok.layout support for zeam.form",
+      description="grokcore.layout support for zeam.form",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[

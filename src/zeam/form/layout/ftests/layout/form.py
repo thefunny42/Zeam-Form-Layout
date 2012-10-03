@@ -66,7 +66,7 @@ let's try out that form with a browser:
   >>> root = getRootFolder()
   >>> root['guy'] = context
 
-  >>> from zope.testbrowser.testing import Browser
+  >>> from zope.app.wsgi.testlayer import Browser
   >>> browser = Browser()
   >>> browser.handleErrors = False
   >>> browser.open('http://localhost/guy/helloform')
@@ -104,10 +104,10 @@ Now we render the form with an form error:
   ...     (context, request), name='helloform')
 
   >>> form.formErrors
-
-  >>> form.errors.append(Error('I am a Error', identifier=form.prefix))
+  []
+  >>> form.errors.append(Error('I am an Error', identifier=form.prefix))
   >>> len(form.formErrors)
-  1 
+  1
 
   >>> print form()
   <html>
@@ -118,12 +118,11 @@ Now we render the form with an form error:
        <div class="content"><form action="http://127.0.0.1" method="post"
         enctype="multipart/form-data">
     <h1>A form about a guy</h1>
-    <dl class="form-errors">
-      <dt>There were errors.</dt>
-      <dd class="form-error">
-        <span>I am a Error</span>
-      </dd>
-    </dl>
+    <div class="form-error">
+      <ul>
+        <li> I am an Error </li>
+      </ul>
+    </div>
     <div class="actions">
       <div class="action">
         <input type="submit" id="form-action-say-hello" name="form.action.say-hello" value="Say hello" class="action" />
@@ -136,10 +135,9 @@ Now we render the form with an form error:
 
 """
 
-from megrok.layout import Layout
-from zeam.form import layout as zeamform
-
 from grokcore import component as grok
+from grokcore.layout import Layout
+from zeam.form import layout as zeamform
 
 
 class Guy(grok.Context):

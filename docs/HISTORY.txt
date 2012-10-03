@@ -1,10 +1,11 @@
 Changelog
 =========
 
-0.4 (unreleased)
-----------------
+0.3.1 (unreleased)
+------------------
 
-* ...
+* Modernize and fix broken tests, that were still relying on
+  ``megrok.layout``.
 
 0.3 (2012/04/27)
 ----------------
