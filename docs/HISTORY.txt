@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.3.1 (2012/10/11)
 ------------------
 
 * Modernize and fix broken tests, that were still relying on
