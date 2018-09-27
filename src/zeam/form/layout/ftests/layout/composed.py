@@ -70,7 +70,7 @@ let's try out that form with a browser:
   >>> root = getRootFolder()
   >>> root['earth'] = context
 
-  >>> from zope.app.wsgi.testlayer import Browser
+  >>> from zope.testbrowser.wsgi import Browser
   >>> browser = Browser()
   >>> browser.handleErrors = False
   >>> browser.open('http://localhost/earth/lifemanagement')
